@@ -14,13 +14,6 @@
 
 html { 
     font-size: calc(14px + 0.25vw);
-
-        // .screen(320px, 1366px,  {
-        //      font-size: calc(14px + 4 * (100vw - 320px) / 1046);
-        // });
-        // .screen (1366px, 1930px, {
-        //     font-size: 18px;
-        // });
   }
 
 * {
@@ -30,7 +23,7 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     color:  #1c1c1c;
-    line-height: 1.15;
+    line-height: 1.5;
 }
 
 .site-wrapper {
@@ -54,7 +47,7 @@ h2 {
 
 }
 .menu__item-mobile {
-    padding: 10px 0;
+    padding: 0.743rem 0;
 }
 .menu__link{
     text-decoration: none;
@@ -115,8 +108,8 @@ h2 {
         content: '';
         width: 47px;
         height: 47px;
-        left: 40%;
-        top: -53px;  
+        left: 43%;
+        top: -65px;  
     }
 
     .screen (768px, 1920px,{
@@ -144,7 +137,7 @@ h2 {
 .about-title {
     
     &:before {
-        background: url('../img/sresume.svg') no-repeat center;  
+        background: url('../img/resume.svg') no-repeat center;  
     }
 }
 
@@ -153,19 +146,22 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    padding-bottom: 70px;
+    justify-content: space-around;  
+    padding-bottom: 80px;
 }
-.input {
+.input,
+.about-textarea {
     border: 1px solid #e5e5e5; 
     border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 0.743rem;
+    margin: 0.743rem 0;
     font-size:1.6429rem;
 
-
+    &:hover {
+        border-color: #435993;
+    }
     &:focus {
-        border-color: #1c1c1c;
+        border-color: linear-gradient(90deg, #ccb1f1 0%, #435993 100%);
         outline: none;
     }
 }
@@ -188,7 +184,9 @@ select {
   color: #c8c8c8;
   background-color: #fff;
 }
-
+.info-date {
+   padding: 0.743rem;
+}
 
 .skills-checkboxes {
     display: flex;
@@ -198,10 +196,129 @@ select {
 .checkboxes-group {
     display: flex;
     flex-direction: column;
+    margin-bottom: 60px;
+    margin-top: 40px;
 }
-.checkbox {
-    position: absolute;
+
+input[type='checkbox'] {
+    display: none;
 }
-.label-checkbox {
+
+.checkbox + label {
+    color:  #000000;
+    font-size: 15.99px;
+    cursor: pointer;
+    padding: 0.743rem;
+    text-align: left;
     position: relative;
+    padding-left: 65px;
+    &:before {
+        position: absolute;
+        content: '';
+        border: 1px solid #435993;
+        border-radius: 3px;
+        width: 20px;
+        height: 20px;
+        left: 30px;
+        top: 8px;
+        background-color: transparent;
+        transition: all .3s ease-in-out;
+    }
+}
+.checkbox:checked + label::before {
+    content: '✔';
+    color: #435993;
+}
+
+.js {
+    width: 100%;
+    margin: 90px auto;
+}
+
+.range-label-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0;
+    margin-bottom: 12px;
+}
+
+.label-item {
+    position: relative;
+    color:  #2e201b;
+    font-size: 12.99px;
+    &:after {
+        position: absolute;
+        content:"";
+        width: 3px;
+        border-left: 1px dotted #435993;
+        height: 0.743rem;
+        bottom: -15px;
+        left: 0;
+    }
+}
+
+.slider {
+    width: 100%;
+    height:20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 260px 0px 0;
+    border-color: transparent  #435993 transparent transparent;
+   
+   .screen( 360, 425px, {
+        border-width: 1rem 21.4286rem 0px 0;
+    });
+    .screen(425px, 640px, {
+        border-width: 1rem 35.7143rem 0 0;
+    });
+
+    .screen(640px, 768px, {
+        border-width: 1rem 38.5714rem 0px 0;
+    });
+    .screen(768px, 1920px {
+        border-width: 1rem 55rem 0px 0;
+    });
+
+}
+
+
+.thumb {
+    position: relative;
+    background-color: #666;
+    opacity: 0.5;
+    width: 23px;
+    height: 26px;
+    background: url('../img/thumb.svg') no-repeat center;
+    cursor: pointer;
+}
+
+.about-description {
+    text-align: center;
+    margin: 20px 0;
+
+}
+.about-textarea {
+    color:  #c8c8c8;
+    font-size: 19.99px;
+    width: 100%;
+}
+
+.submit-button {
+    color:  #ffffff;
+    font-size: 1.0714rem;
+    line-height: @light-text;
+    background-color: #435993;
+    line-height: 1.5;
+    background-color: #435993;
+    border-radius: 0.7143rem;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    margin: 3rem;
+
+    &:hover {
+        background-color: #fff;
+        color: #435993;
+    }
 }

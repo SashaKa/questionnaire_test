@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/minireset.min.css">
@@ -31,7 +31,7 @@
                 <h2 class="info__title" >Личная информация</h2>
                 <ul class="info__list">
                     <li class="info__item">
-                        <input type="text" class=" input info-name" placeholder="ФИО">
+                        <input type="text" class="input info-name" placeholder="ФИО">
                     </li>
                     <li class="info__item">
                         <select class="input info-date">
@@ -71,66 +71,74 @@
             </div>
             <div class="skills" id="skills">
                 <h2 class="skills-title">Расскажите о своем опыте</h2>
-                <ul class="skills-checkboxes">
-                    <li class="checkboxes-group first-group">
-                        <input type="checkbox" class="checkbox" name="metodology" >
-                        <label class="label-checkbox">БЭМ/OOCSS</label>
-                        <input type="checkbox" name="prerprocessor" class="checkbox">
-                        <label fclass="label-checkbox">Stylus/LESS/SASS</label>
-                        <input type="checkbox" name="svg" class="checkbox">
-                        <label class="label-checkbox">Работаю с SVG</label>
-                    </li>
-                    <li class="checkboxes-group second-group">
-                        <input type="checkbox" name="semantic"class="checkbox">
-                        <label class="label-checkbox">Верстаю семантично</label>
-                        <input type="checkbox" name="tools" class="checkbox">
-                        <input type="checkbox" name="" class="checkbox">
-                        <label class="label-checkbox">ES2015/ES2016</label>
-                    </li>
-                    <li class="checkboxes-group third-group">
-                        <label class="label-checkbox">Gulp/GRUNT</label>
-                        <input type="checkbox" name="webpack"class="checkbox">
-                        <label class="label-checkbox">Webpack</label>
-                        <input type="checkbox" name="library" class="checkbox">
-                        <label class="label-checkbox">jQuery</label>
-                        <input type="checkbox" name="git" class="checkbox">
-                        <label class="label-checkbox">Ипользую Git</label>
-                    </li>
-                </ul>
+                <div class="checkboxes-group">
+                    <ul class="checkboxes-first-group">
+                        <li class="skills-checkboxes">
+                            <input type="checkbox" class="checkbox" id="metodology" hidden >
+                            <label  for ="metodology" class="label-checkbox">БЭМ/OOCSS</label>
+                        </li>
+                        <li class="skills-checkboxes">
+                            <input type="checkbox" id="prerprocessor" class="checkbox" hidden>
+                            <label for ="prerprocessor" class="label-checkbox">Stylus/LESS/SASS</label>
+                        </li>
+                        <li class="skills-checkboxes">
+                            <input type="checkbox" id="svg" class="checkbox" hidden>
+                            <label  for="svg"
+                            class="label-checkbox">Работаю с SVG</label>
+                        </li>
+                    </ul>
+                    <ul class="checkboxes-second-group">
+                        <li class="skills-checkboxes">
+                            <input type="checkbox" id="semantic"class="checkbox" hidden>
+                            <label for="semantic" class="label-checkbox">Верстаю семантично</label>
+                        </li>
+                        <li class="skills-checkboxes">
+                            <input type="checkbox" id="script" class="checkbox" hidden>
+                            <label for="script" class="label-checkbox">ES2015/ES2016</label>
+                        </li>
+                        <li class="skills-checkboxes">
+                            <input type="checkbox" id="tools"class="checkbox" hidden>
+                            <label for="tools" class="label-checkbox">Gulp/GRUNT</label>
+                        </li>
+                    </ul>
+                    <ul class="checkboxes-third-group">
+                        <li class="skills-checkboxes">
+                            <input type="checkbox" id="webpack" class="checkbox" hidden>
+                            <label for="webpack" class="label-checkbox">Webpack</label>
+                        </li>
+                        <li class="skills-checkboxes">
+                            <input type="checkbox" id="library" class="checkbox" hidden>
+                            <label class="label-checkbox" for="library">jQuery</label>
+                        </li>
+                        <li class="skills-checkboxes">
+                            <input type="checkbox" id="git" class="checkbox" hidden>
+                            <label for="git" class="label-checkbox">Ипользую Git</label>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div id="js" class="js">
                 <h2 class="js-title">Уровень владения JavaScript</h2>
                 <div class="js-range">
-                    <input type="range" class="range-input" min="1" max="4" step="1" value="1">
                     <ul class="range-label-list">
                         <li class="label-item">Не владею</li>
                         <li class="label-item">Использую готовые решения</li>
                         <li class="label-item">Использую готовые решения и умею переделывать</li>
                         <li class="label-item">Пишу сложный JS с нуля</li>
                     </ul>
+                    <div id="slider"class="slider">
+                        <div class="thumb"></div>
+                    </div>
                 </div>     
             </div> 
             <div class="about" id="about">
                 <h2 class="about-title">Расскажите о себе</h2>
                 <p class="about-description">Напишите несколько предложений,чем привлекла наша вакансия и что вы ожидаете от работы у нас.</p>
-                <textarea  rows="10" cols="45" class="about-textarea" placeholder="Здесь хочется работать, потому что..."></textarea>
+                <textarea  rows="7" cols="25" class="about-textarea" placeholder="Здесь хочется работать, потому что..."></textarea>
             </div>  
             <button type="submit" class="submit-button">Готово</button>     
         </form>
     </div>
-    <script>
-       const burger = document.querySelector( '.menu__mobile-logo')
-       const mobileMenu = document.querySelector('.menu__list-mobile')
-
-       burger.addEventListener('click' , () => {
-           if(!burger.classList.contains('menu-on')) {
-               burger.classList.add('menu-on')
-               mobileMenu.classList.add('show-menu')
-           } else if (burger.classList.contains('menu-on')) {
-               burger.classList.remove('menu-on')
-               mobileMenu.classList.remove('show-menu')
-           }
-       })
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>

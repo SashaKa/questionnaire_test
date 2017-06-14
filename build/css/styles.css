@@ -11,7 +11,7 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   color: #1c1c1c;
-  line-height: 1.15;
+  line-height: 1.5;
 }
 .site-wrapper {
   max-width: 768px;
@@ -30,7 +30,7 @@ h2 {
   display: none;
 }
 .menu__item-mobile {
-  padding: 10px 0;
+  padding: 0.743rem 0;
 }
 .menu__link {
   text-decoration: none;
@@ -105,8 +105,8 @@ h2 {
   content: '';
   width: 47px;
   height: 47px;
-  left: 40%;
-  top: -53px;
+  left: 43%;
+  top: -65px;
 }
 @media (min-width: 768px) and (max-width: 1919px) {
   .info__title,
@@ -127,7 +127,7 @@ h2 {
   background: url('../img/skills.svg') no-repeat center;
 }
 .about-title:before {
-  background: url('../img/sresume.svg') no-repeat center;
+  background: url('../img/resume.svg') no-repeat center;
 }
 .info__list {
   display: -webkit-box;
@@ -150,17 +150,23 @@ h2 {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  padding-bottom: 70px;
+  padding-bottom: 80px;
 }
-.input {
+.input,
+.about-textarea {
   border: 1px solid #e5e5e5;
   border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 0.743rem;
+  margin: 0.743rem 0;
   font-size: 1.6429rem;
 }
-.input:focus {
-  border-color: #1c1c1c;
+.input:hover,
+.about-textarea:hover {
+  border-color: #435993;
+}
+.input:focus,
+.about-textarea:focus {
+  border-color: linear-gradient(90deg, #ccb1f1 0%, #435993 100%);
   outline: none;
 }
 ::-webkit-input-placeholder {
@@ -182,6 +188,9 @@ select {
   text-align-last: center;
   color: #c8c8c8;
   background-color: #fff;
+}
+.info-date {
+  padding: 0.743rem;
 }
 .skills-checkboxes {
   display: -webkit-box;
@@ -210,10 +219,131 @@ select {
   -moz-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin-bottom: 60px;
+  margin-top: 40px;
 }
-.checkbox {
-  position: absolute;
+input[type='checkbox'] {
+  display: none;
 }
-.label-checkbox {
+.checkbox + label {
+  color: #000000;
+  font-size: 15.99px;
+  cursor: pointer;
+  padding: 0.743rem;
+  text-align: left;
   position: relative;
+  padding-left: 65px;
+}
+.checkbox + label:before {
+  position: absolute;
+  content: '';
+  border: 1px solid #435993;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  left: 30px;
+  top: 8px;
+  background-color: transparent;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.checkbox:checked + label::before {
+  content: '✔';
+  color: #435993;
+}
+.js {
+  width: 100%;
+  margin: 90px auto;
+}
+.range-label-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0;
+  margin-bottom: 12px;
+}
+.label-item {
+  position: relative;
+  color: #2e201b;
+  font-size: 12.99px;
+}
+.label-item:after {
+  position: absolute;
+  content: "";
+  width: 3px;
+  border-left: 1px dotted #435993;
+  height: 0.743rem;
+  bottom: -15px;
+  left: 0;
+}
+.slider {
+  width: 100%;
+  height: 20px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 260px 0px 0;
+  border-color: transparent  #435993 transparent transparent;
+}
+@media (min-width: 360) and (max-width: 424px) {
+  .slider {
+    border-width: 1rem 21.4286rem 0px 0;
+  }
+}
+@media (min-width: 425px) and (max-width: 639px) {
+  .slider {
+    border-width: 1rem 35.7143rem 0 0;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .slider {
+    border-width: 1rem 38.5714rem 0px 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .slider {
+    border-width: 1rem 55rem 0px 0;
+  }
+}
+.thumb {
+  position: relative;
+  background-color: #666;
+  opacity: 0.5;
+  width: 23px;
+  height: 26px;
+  background: url('../img/thumb.svg') no-repeat center;
+  cursor: pointer;
+}
+.about-description {
+  text-align: center;
+  margin: 20px 0;
+}
+.about-textarea {
+  color: #c8c8c8;
+  font-size: 19.99px;
+  width: 100%;
+}
+.submit-button {
+  color: #ffffff;
+  font-size: 1.0714rem;
+  line-height: 300;
+  line-height: 1.5;
+  background-color: #435993;
+  border-radius: 0.7143rem;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  margin: 3rem;
+}
+.submit-button:hover {
+  background-color: #fff;
+  color: #435993;
 }
