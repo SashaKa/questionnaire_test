@@ -28,7 +28,32 @@ body {
 
 .site-wrapper {
     max-width: 768px;
-    padding: 1% 10%;
+
+    margin: 0 auto;
+
+    &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color:   #d9d9d9;;
+        top: 85px;
+        left: 0;
+
+        .screen(320px, 768px, {
+            display: none;
+        });
+    }
+}
+.header,
+.questionnaire {
+    width: 100%;
+}
+.info,
+.skills,
+.js,
+.about {
+    width: 100%;
 }
 
 .questionnaire-title {
@@ -43,19 +68,28 @@ h2 {
 }
 
 .menu__list {
-    display: none;
 
-}
-.menu__item-mobile {
-    padding: 0.743rem 0;
+    .screen(320px, 768px, {
+            display: none;
+        });
+
+    .screen(768px, 2220px, {
+            display: block;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 100px;
+            margin-top: 40px;
+        });
 }
 .menu__link{
     text-decoration: none;
     font-weight: @light-text;
 
-    &:hover,
-    &:active {
+    &:hover{
         color:  #1c1c1c;
+    }
+    &:active { 
+        color: #ccb1f1;
     }
 
 }
@@ -64,12 +98,32 @@ h2 {
     visibility: hidden;
     position: absolute;
     background-color: #fff;
-    top: 31px;
+    top: 36px;
     left: 5%;
     width: 90vw;
     padding: 25px 15px;
     transition: left .3s;
+    animation-duration: 3s;
+    animation-name: slidein;
+
+        // .screen(768px, 2220px, {
+        //     visibility:hidden;
+        // });
 }
+.menu__item-mobile {
+    padding: 0.743rem 0;
+}
+.menu__mobile-logo {
+
+    .screen(320px, 768px, {
+            display: block;
+        });
+
+    .screen(768px, 2220px, {
+            display: none;
+        });
+}
+
 .show-menu {
     visibility: visible;
     left: 5%;
@@ -85,8 +139,20 @@ h2 {
     cursor: pointer;
     position: relative;
     margin: 0 auto;
+
+}
+.animation-on {
+   animation: burger-rotate .4s; 
 }
 
+@keyframes burger-rotate {
+    0% {
+        transform: rotateX(-180deg);
+    }
+    100% {
+        transform: translateY(90deg);
+    }
+}
 .questionnaire {
     display: flex;
     flex-direction: column;
@@ -103,17 +169,21 @@ h2 {
     font-weight: @light-text;
     position: relative;
 
+    
+
     &:before {
         position: absolute;
         content: '';
         width: 47px;
         height: 47px;
-        left: 43%;
+        left: 46%;
         top: -65px;  
     }
 
     .screen (768px, 1920px,{
         font-size: 2.0714rem;
+        margin-top: 60px;
+        margin-bottom: 50px;
     });
 }
 
@@ -198,7 +268,20 @@ select {
     flex-direction: column;
     margin-bottom: 60px;
     margin-top: 40px;
+    align-items: center;
+    
+    .screen(768px, 2220px {
+        flex-direction: row;
+    });
+
 }
+
+.checkboxes-first-group,
+.checkboxes-second-group,
+.checkboxes-third-group {
+    width: 33.3%;
+}
+
 
 input[type='checkbox'] {
     display: none;
@@ -211,7 +294,7 @@ input[type='checkbox'] {
     padding: 0.743rem;
     text-align: left;
     position: relative;
-    padding-left: 65px;
+    padding-left: 55px;
     &:before {
         position: absolute;
         content: '';
@@ -219,11 +302,19 @@ input[type='checkbox'] {
         border-radius: 3px;
         width: 20px;
         height: 20px;
-        left: 30px;
-        top: 8px;
+        left: 22px;
+        top: 13px;
         background-color: transparent;
         transition: all .3s ease-in-out;
+
+        .screen(768px, 1920px {
+        
+    });
     }
+
+    .screen(768px, 1920px {
+        padding-left: 50px;
+    });
 }
 .checkbox:checked + label::before {
     content: '✔';
@@ -267,19 +358,22 @@ input[type='checkbox'] {
     border-width: 15px 260px 0px 0;
     border-color: transparent  #435993 transparent transparent;
    
-   .screen( 360, 425px, {
+   .screen( 360px, 425px, {
         border-width: 1rem 21.4286rem 0px 0;
     });
     .screen(425px, 640px, {
-        border-width: 1rem 35.7143rem 0 0;
+        border-width: 1rem 30.7143rem 0 0;
     });
 
     .screen(640px, 768px, {
         border-width: 1rem 38.5714rem 0px 0;
     });
-    .screen(768px, 1920px {
-        border-width: 1rem 55rem 0px 0;
+    .screen(768px, 960px {
+        border-width: 1rem 45rem 0px 0;
     });
+    .screen(960px, 2220px {
+        border-width: 1rem 55rem 0px 0;
+    });   
 
 }
 

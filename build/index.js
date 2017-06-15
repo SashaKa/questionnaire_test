@@ -5,6 +5,7 @@ burger.addEventListener('click' , () => {
     if(!burger.classList.contains('menu-on')) {
         burger.classList.add('menu-on')
         mobileMenu.classList.add('show-menu')
+        burger.classList.add('animation-on')
     } else if (burger.classList.contains('menu-on')) {
         burger.classList.remove('menu-on')
         mobileMenu.classList.remove('show-menu')
