@@ -361,7 +361,7 @@ input[type='checkbox'] {
   width: 20px;
   height: 20px;
   left: 22px;
-  top: 13px;
+  top: 10px;
   background-color: transparent;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -410,38 +410,23 @@ input[type='checkbox'] {
   left: 0;
 }
 .slider {
-  width: 100%;
+  max-width: 100%;
   height: 20px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 15px 260px 0px 0;
-  border-color: transparent  #435993 transparent transparent;
 }
-@media (min-width: 360px) and (max-width: 424px) {
-  .slider {
-    border-width: 1rem 21.4286rem 0px 0;
-  }
+.clip-triangle {
+  -webkit-clip-path: polygon(100% 0, 0 10%, 100% 9%);
+  clip-path: polygon(100% 0, 0 10%, 100% 9%);
 }
-@media (min-width: 425px) and (max-width: 639px) {
-  .slider {
-    border-width: 1rem 30.7143rem 0 0;
-  }
-}
-@media (min-width: 640px) and (max-width: 767px) {
-  .slider {
-    border-width: 1rem 38.5714rem 0px 0;
-  }
-}
-@media (min-width: 768px) and (max-width: 959px) {
-  .slider {
-    border-width: 1rem 45rem 0px 0;
-  }
-}
-@media (min-width: 960px) and (max-width: 2219px) {
-  .slider {
-    border-width: 1rem 55rem 0px 0;
-  }
+.slider-inner-scale {
+  background: -moz-linear-gradient(0deg, #ccb1f1 0%, #435993 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#ccb1f1), to(#435993));
+  background: -moz-linear-gradient(left, #ccb1f1 0%, #435993 100%);
+  background: linear-gradient(90deg, #ccb1f1 0%, #435993 100%);
+  width: 100%;
+  height: 15px;
+  display: block;
+  -webkit-clip-path: url("#clip-triangle");
+  clip-path: url("#clip-triangle");
 }
 .thumb {
   position: relative;
@@ -451,6 +436,21 @@ input[type='checkbox'] {
   height: 26px;
   background: url('../img/thumb.svg') no-repeat center;
   cursor: pointer;
+}
+.about {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 59%;
 }
 .about-description {
   text-align: center;
@@ -471,8 +471,13 @@ input[type='checkbox'] {
   padding: 0.7rem 1.5rem;
   border: none;
   margin: 3rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .submit-button:hover {
   background-color: #fff;
   color: #435993;
+  -webkit-box-shadow: inset 1px 1px 0 0  #435993;
+  box-shadow: inset 1px 1px 0 0  #435993;
 }
