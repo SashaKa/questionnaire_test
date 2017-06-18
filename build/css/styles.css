@@ -413,9 +413,8 @@ input[type='checkbox'] {
   max-width: 100%;
   height: 20px;
 }
-.clip-triangle {
-  -webkit-clip-path: polygon(100% 0, 0 10%, 100% 9%);
-  clip-path: polygon(100% 0, 0 10%, 100% 9%);
+.slider-svg {
+  background-color: rgba(28, 28, 28, 0.1);
 }
 .slider-inner-scale {
   background: -moz-linear-gradient(0deg, #ccb1f1 0%, #435993 100%);
@@ -424,9 +423,6 @@ input[type='checkbox'] {
   background: linear-gradient(90deg, #ccb1f1 0%, #435993 100%);
   width: 100%;
   height: 15px;
-  display: block;
-  -webkit-clip-path: url("#clip-triangle");
-  clip-path: url("#clip-triangle");
 }
 .thumb {
   position: relative;
@@ -451,6 +447,7 @@ input[type='checkbox'] {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 59%;
+  margin: 0 auto;
 }
 .about-description {
   text-align: center;
