@@ -13,26 +13,29 @@ burger.addEventListener('click' , () => {
 })
 
 const sliderElem = document.getElementById('slider')
-const thumbElem = sliderElem.children[0]
+const thumbElem = document.getElementById('button')
+const rangeElem = document.getElementById('range')
 
-    thumbElem.onmousedown = function(e) {
+rangeElem.setAttribute('transform', `translate(-715)`)
+
+    thumbElem.onmousedown = e => {
       const thumbCoords = getCoords(thumbElem)
       const shiftX = e.pageX - thumbCoords.left
       const sliderCoords = getCoords(sliderElem)
 
-        document.onmousemove = function(e) {
-        const newLeft = e.pageX - shiftX - sliderCoords.left
-
-        
-        if (newLeft < 0) {
-          newLeft = 0
+        document.onmousemove = e => {
+        let newLeft = e.pageX - shiftX - sliderCoords.left
+        if (newLeft < -thumbCoords.width / 2) {
+        newLeft = -thumbCoords.width / 2
         }
-        const rightEdge = sliderElem.offsetWidth - thumbElem.offsetWidth
+        const rightEdge = 
+          sliderElem.offsetWidth - thumbElem.offsetWidth + thumbCoords.width / 2 
         if (newLeft > rightEdge) {
           newLeft = rightEdge
         }
 
         thumbElem.style.left = newLeft + 'px'
+        angeElem.setAttribute('transform', `translate(${newLeft - 700})`)
     }
 
     document.onmouseup = function() {
@@ -45,9 +48,11 @@ const thumbElem = sliderElem.children[0]
       return false
     }
 
-    function getCoords(elem) { 
+  getCoords= elem => { 
     const box = elem.getBoundingClientRect()
       return {
+        width: box.width,
+        height: box.height,
         top: box.top + pageYOffset,
         left: box.left + pageXOffset
       }

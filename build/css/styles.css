@@ -416,7 +416,7 @@ input[type='checkbox'] {
 .slider-svg {
   background-color: rgba(28, 28, 28, 0.1);
 }
-.slider-inner-scale {
+#range {
   background: -moz-linear-gradient(0deg, #ccb1f1 0%, #435993 100%);
   background: -webkit-gradient(linear, left top, right top, from(#ccb1f1), to(#435993));
   background: -moz-linear-gradient(left, #ccb1f1 0%, #435993 100%);
@@ -424,7 +424,7 @@ input[type='checkbox'] {
   width: 100%;
   height: 15px;
 }
-.thumb {
+.circle {
   position: relative;
   background-color: #666;
   opacity: 0.5;
