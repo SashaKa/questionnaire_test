@@ -13,10 +13,10 @@ burger.addEventListener('click' , () => {
 })
 
 const sliderElem = document.getElementById('slider')
-const thumbElem = document.getElementById('button')
+const thumbElem = document.getElementById('thumb')
 const rangeElem = document.getElementById('range')
 
-rangeElem.setAttribute('transform', `translate(-715)`)
+rangeElem.setAttribute('transform', `translate(-700)`)
 
     thumbElem.onmousedown = e => {
       const thumbCoords = getCoords(thumbElem)
