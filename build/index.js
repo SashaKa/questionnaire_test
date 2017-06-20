@@ -35,7 +35,7 @@ rangeElem.setAttribute('transform', `translate(-715)`)
         }
 
         thumbElem.style.left = newLeft + 'px'
-        angeElem.setAttribute('transform', `translate(${newLeft - 700})`)
+        rangeElem.setAttribute('transform', `translate(${newLeft - 700})`)
     }
 
     document.onmouseup = function() {
@@ -48,7 +48,7 @@ rangeElem.setAttribute('transform', `translate(-715)`)
       return false
     }
 
-  getCoords= elem => { 
+  getCoords = elem => { 
     const box = elem.getBoundingClientRect()
       return {
         width: box.width,

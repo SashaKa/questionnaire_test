@@ -377,8 +377,13 @@ input[type='checkbox'] {
   color: #435993;
 }
 .js {
-  width: 100%;
+  width: 90%;
   margin: 90px auto;
+}
+@media (min-width: 758px) and (max-width: 2219px) {
+  .js {
+    width: 100%;
+  }
 }
 .range-label-list {
   display: -webkit-box;
@@ -409,20 +414,19 @@ input[type='checkbox'] {
   bottom: -15px;
   left: 0;
 }
+@media (min-width: 320px) and (max-width: 757px) {
+  #svg {
+    width: 100%;
+  }
+}
 .slider {
   max-width: 100%;
   height: 20px;
 }
-.slider-svg {
-  background-color: rgba(28, 28, 28, 0.1);
-}
-#range {
-  background: -moz-linear-gradient(0deg, #ccb1f1 0%, #435993 100%);
-  background: -webkit-gradient(linear, left top, right top, from(#ccb1f1), to(#435993));
-  background: -moz-linear-gradient(left, #ccb1f1 0%, #435993 100%);
-  background: linear-gradient(90deg, #ccb1f1 0%, #435993 100%);
+.line {
   width: 100%;
-  height: 15px;
+  height: 2px;
+  background-color: transparent;
 }
 .circle {
   position: relative;
@@ -432,6 +436,8 @@ input[type='checkbox'] {
   height: 26px;
   background: url('../img/thumb.svg') no-repeat center;
   cursor: pointer;
+  left: -7px;
+  top: -7px;
 }
 .about {
   display: -webkit-box;
