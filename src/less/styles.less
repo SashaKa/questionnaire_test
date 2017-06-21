@@ -358,6 +358,7 @@ input[type='checkbox'] {
     margin: 20px 0;
     margin-bottom: 12px;
     list-style: none;
+    padding-left: 0;
 }
 
 .label-item {
@@ -371,9 +372,16 @@ input[type='checkbox'] {
         content:"";
         width: 3px;
         border-left: 1px dotted #435993;
-        height: 0.743rem;
-        bottom: -15px;
+        height: 2rem;
+        bottom: -32px;
         left: 0;
+
+        .screen(320px, 758px, {
+            bottom: -25px;
+        });
+    }
+    &:first-child {
+        margin-left: 0;
     }
 }
 #svg {

@@ -427,6 +427,7 @@ input[type='checkbox'] {
   margin: 20px 0;
   margin-bottom: 12px;
   list-style: none;
+  padding-left: 0;
 }
 .label-item {
   position: relative;
@@ -444,9 +445,17 @@ input[type='checkbox'] {
   content: "";
   width: 3px;
   border-left: 1px dotted #435993;
-  height: 0.743rem;
-  bottom: -15px;
+  height: 2rem;
+  bottom: -32px;
   left: 0;
+}
+@media (min-width: 320px) and (max-width: 757px) {
+  .label-item:after {
+    bottom: -25px;
+  }
+}
+.label-item:first-child {
+  margin-left: 0;
 }
 @media (min-width: 320px) and (max-width: 757px) {
   #svg {
