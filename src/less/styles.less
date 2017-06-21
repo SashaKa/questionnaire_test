@@ -68,6 +68,7 @@ h2 {
 }
 
 .menu__list {
+    list-style: none;
 
     .screen(320px, 768px, {
             display: none;
@@ -105,6 +106,7 @@ h2 {
     transition: left .3s;
     animation-duration: 3s;
     animation-name: slidein;
+    list-style: none;
 }
 
 .menu__item-mobile {
@@ -215,10 +217,10 @@ h2 {
     align-items: center;
     justify-content: space-around;  
     padding-bottom: 80px;
+    list-style: none;
 }
 .input,
-.about-textarea,
-.info-date {
+.about-textarea {
     border: 1px solid #e5e5e5; 
     border-radius: 5px;
     padding: 0.743rem;
@@ -253,7 +255,9 @@ select {
   background-color: #fff;
 }
 .info-date {
-   padding: 0.743rem;
+    padding: 0.743rem;
+    width: 269px;
+    height: 48px;
 }
 
 .skills-checkboxes {
@@ -353,12 +357,15 @@ input[type='checkbox'] {
     width: 100%;
     margin: 20px 0;
     margin-bottom: 12px;
+    list-style: none;
 }
 
 .label-item {
     position: relative;
     color:  #2e201b;
     font-size: 12.99px;
+    flex: 1;
+    margin: 0 0.5rem;
     &:after {
         position: absolute;
         content:"";
@@ -369,7 +376,6 @@ input[type='checkbox'] {
         left: 0;
     }
 }
-
 #svg {
      .screen(320px, 758px,{
         width: 100%;
