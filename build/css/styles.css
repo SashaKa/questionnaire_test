@@ -403,6 +403,9 @@ input[type='checkbox'] {
   -moz-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+.label-checkbox {
+  white-space: nowrap;
+}
 .js {
   width: 90%;
   margin: 90px auto;
