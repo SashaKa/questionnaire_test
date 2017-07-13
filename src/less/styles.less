@@ -28,7 +28,6 @@ body {
 
 .site-wrapper {
     max-width: 768px;
-
     margin: 0 auto;
 
     &:before {
@@ -114,13 +113,13 @@ h2 {
 }
 .menu__mobile-logo {
 
+    .screen(768px, 2220px, {
+            display: none;
+        });
     .screen(320px, 768px, {
             display: block;
         });
 
-    .screen(768px, 2220px, {
-            display: none;
-        });
 }
 
 .show-menu {
@@ -323,7 +322,7 @@ input[type='checkbox'] {
 .checkbox:checked + label::after {
     position: absolute;
     background-color: #435993;
-    width: 4px;
+    
     border-radius: 5px;
     content: '';
 
@@ -333,12 +332,14 @@ input[type='checkbox'] {
     top: 17px;
     left: 37px;
     transform: rotate(45deg);
+    width: 1px;
 }
 .checkbox:checked + label::after{
-    top: 12px;
+    top: 15px;
     left: 27px;
     height: 20px;
     transform: rotate(-45deg);
+    width: 4px;
 }
 .label-checkbox {
     white-space: nowrap;
